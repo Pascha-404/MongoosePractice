@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/goksenia', {
+mongoose.connect('mongodb://localhost/gokseniaDB', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -16,7 +16,7 @@ const projectShema = new mongoose.Schema({
     title: String,
     content: {
         homeTxt: String,
-        projextTxt: String
+        projectTxt: String
     },
     imgLinks: {
         img1: String,
@@ -26,3 +26,15 @@ const projectShema = new mongoose.Schema({
 });
 
 const Project = mongoose.model('Project', projectShema);
+
+const chatAppWeb = new Project({
+    title: 'Chat App website',
+    content: {
+        homeTxt: 'This is a homepage design and build for a concept project - a chat application. I have designed the page first then later built a responsive page in Webflow',
+        projectTxt: 'This is a homepage design and build for a concept project - a chat application. I have designed the page first then later built a responsive page in Webflow'
+    },
+    imgLinks: {
+        img1: '/img/chatApp.png'
+    },
+    liveLink: 'https://chatapp-5671f6.webflow.io'
+})

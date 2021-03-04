@@ -54,3 +54,18 @@ const chatAppWeb = new Project({
     },
     liveLink: 'https://chatapp-5671f6.webflow.io'
 })
+
+Project.findOneAndUpdate({
+        title: 'Chat App website'
+    }, {
+        imgLinks: 'CHANGED TO NOTHING GOOD!'
+    }, {
+        new: true
+    })
+    .then(data => {
+        console.log(data);
+        console.log('IT WORKED!');
+    })
+    .catch(err => {
+        console.log(err)
+    });

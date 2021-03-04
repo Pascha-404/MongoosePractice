@@ -13,16 +13,32 @@ mongoose.connect('mongodb://localhost/gokseniaDB', {
     });
 
 const projectShema = new mongoose.Schema({
-    title: String,
+    title: {
+        type: String,
+        required: true
+    },
     content: {
-        homeTxt: String,
-        projectTxt: String
+        homeTxt: {
+            type: String,
+            required: true
+        },
+        projectTxt: {
+            type: String,
+            required: true
+        }
     },
     imgLinks: {
-        img1: String,
-        img2: String
+        img1: {
+            type: String,
+            required: true
+        },
+        img2: {
+            type: String
+        }
     },
-    liveLink: String
+    liveLink: {
+        type: String
+    }
 });
 
 const Project = mongoose.model('Project', projectShema);
